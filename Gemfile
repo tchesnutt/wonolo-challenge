@@ -38,6 +38,9 @@ gem 'binding_of_caller'
 gem 'annotate'
 gem 'jquery-rails'
 gem 'chewy'
+gem 'whenever', :require => false
+gem 'rest-client'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
