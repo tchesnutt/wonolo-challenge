@@ -19,10 +19,11 @@ class App extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    this.props.requestJobs(this.state);
+    console.log('off to backend');
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='address-form'>
         <form onSubmit={this.handleSubmit}>
