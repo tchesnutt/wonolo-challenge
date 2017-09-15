@@ -1,0 +1,20 @@
+.address-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-interior {
+  width: 225px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+.form-row-submit {
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
