@@ -18,6 +18,7 @@ class Maps extends React.Component {
     }
 
     this.onMarkerClicked = this.onMarkerClicked.bind(this)
+    this.displayBadges = this.displayBadges.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,19 +31,39 @@ class Maps extends React.Component {
 
   onMarkerClicked(props, marker, e) {
     let selectedMarkerInfo = this.state.markers.filter(el => {
-      console.log(el.id);
-      console.log(props.name);
       if(el.id === props.name){
         return el
       }
     })[0];
-     this.setState({
-       selectedPlace: props,
-       selectedMarkerInfo: selectedMarkerInfo,
-       activeMarker: marker,
-       showingInfoWindow: true
-     });
-   }
+    this.setState({
+      selectedPlace: props,
+      selectedMarkerInfo: selectedMarkerInfo,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  }
+
+  displayBadges(){
+    if(this.state.selectedMarkerInfo.badges !== undefined){
+      if(this.state.selectedMarkerInfo.badges.length > 0){
+        return(
+          <div>
+            <h1>Badges:</h1>
+            {this.state.selectedMarkerInfo.badges.map((b, i) => (
+              <div key={i}>
+                <p>{b.name}</p>
+                <img className='badge' src={b.icon_url}/>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    } else {
+      return(
+        <div/>
+      )
+    }
+  }
 
   render(){
     return(
@@ -68,6 +89,7 @@ class Maps extends React.Component {
               <p>{this.state.selectedMarkerInfo.category}</p>
               <h1>Description:</h1>
               <p>{this.state.selectedMarkerInfo.description}</p>
+              {this.displayBadges()}
             </div>
         </InfoWindow>
       </Map>
