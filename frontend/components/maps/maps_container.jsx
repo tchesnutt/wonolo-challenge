@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import Maps from './maps';
 
 const mapStateToProps = (state, ownProps) => ({
-  jobs: state.search_result.jobs,
-  center: state.search_result.loc
+  jobs: state.searchResult.jobs,
+  center: state.searchResult.loc
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -12,3 +12,9 @@
   height: 50px;
   width: 50px;
 }
+
+.badge-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

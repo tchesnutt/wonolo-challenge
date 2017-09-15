@@ -43,6 +43,7 @@ gem 'rest-client'
 gem 'dotenv-rails'
 gem 'geocoder'
 gem 'rails_12factor'
+gem 'redis'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

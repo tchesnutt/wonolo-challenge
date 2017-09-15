@@ -49,12 +49,14 @@ class Maps extends React.Component {
         return(
           <div>
             <h1>Badges:</h1>
-            {this.state.selectedMarkerInfo.badges.map((b, i) => (
-              <div key={i}>
-                <p>{b.name}</p>
-                <img className='badge' src={b.icon_url}/>
-              </div>
-            ))}
+            <div className="badges-list">
+              {this.state.selectedMarkerInfo.badges.map((b, i) => (
+                <div key={i}>
+                  <p>{b.name}</p>
+                  <img className='badge' src={b.icon_url}/>
+                </div>
+              ))}
+            </div>
           </div>
         )
       }
