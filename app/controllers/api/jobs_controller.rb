@@ -3,7 +3,6 @@ class Api::JobsController < ApplicationController
   def index
     if !params[:address].nil?
       @jobs = []
-
       @location = address_to_geolocation("#{params[:address]}, #{params[:city]} #{params[:zip]}")
       identified_jobs = search_by_location.load
       locations = Set.new
