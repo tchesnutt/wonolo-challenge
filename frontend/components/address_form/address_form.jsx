@@ -8,20 +8,38 @@ class App extends React.Component {
       address: "",
       city: "",
       zip: "",
-      dist: ""
+      dist: "",
+      error: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
   handleChange(e) {
     this.setState({[e.target.dataset.field]: e.target.value});
   }
 
+  checkDistance(s){
+    if(s === ""){
+      return "You must input a distance"
+    } else if (!parseInt(s)) {
+      return "You must input a number"
+    } else {
+      return true
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
-    this.props.requestJobs(this.state);
-    console.log('off to backend');
+    let check = this.checkDistance(this.state.dist)
+    if(typeof check === 'string'){
+      this.setState({error: check})
+    } else {
+      this.setState({error: ""})
+      this.props.requestJobs(this.state);
+      console.log('off to backend');
+    }
   }
 
   render() {
@@ -44,6 +62,7 @@ class App extends React.Component {
             Distance(mi):
             <input type="text" data-field="dist" value={this.state.dist} onChange={this.handleChange} />
           </label>
+          <h4>{this.state.error}</h4>
           <div className='form-row-submit'>
             <input type="submit" value="Submit" />
           </div>
