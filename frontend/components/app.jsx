@@ -32,6 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='whole-page'>
+        <h1>Wonolyagot</h1>
         <Modal
           isOpen={this.state.welcome}
           onRequestClose={this.closeModal}

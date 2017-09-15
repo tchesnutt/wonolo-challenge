@@ -2,7 +2,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 15px;
+}
+
+.whole-page h1 {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background-color: #ffdc00;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 10px;
 }
 
 .modal-content {
