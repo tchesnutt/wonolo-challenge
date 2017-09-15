@@ -1,7 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :update_jobs => :environment do
   puts "Dropping Old Data..."
-  Rake::Task["db:reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1"].invoke
+  Rake::Task["db:reset"][DISABLE_DATABASE_ENVIRONMENT_CHECK: 1].invoke
   Rake::Task["db:migrate"].invoke
   puts "Configuring New DB"
   Rake::Task["db:setup"].invoke
