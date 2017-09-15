@@ -6,7 +6,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       address: "",
-      city: "",
+      city: "San Francisco",
       zip: "",
       dist: "",
       error: ""
