@@ -45,7 +45,6 @@ class Maps extends React.Component {
    }
 
   render(){
-    console.log(this.state);
     return(
       <Map
         style={{width: '80%', height: '80%', marginLeft: '10%'}}
@@ -62,10 +61,12 @@ class Maps extends React.Component {
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>
-            <div>
-              <h1>{this.state.selectedMarkerInfo.wage}</h1>
-              <h4>Catgory:{this.state.selectedMarkerInfo.category}</h4>
-              <h4>Description:</h4>
+            <div className='job-info'>
+              <h1>Wage: </h1>
+              <p>{this.state.selectedMarkerInfo.wage/(this.state.selectedMarkerInfo.duration/60)}/hr</p>
+              <h1>Catgory: </h1>
+              <p>{this.state.selectedMarkerInfo.category}</p>
+              <h1>Description:</h1>
               <p>{this.state.selectedMarkerInfo.description}</p>
             </div>
         </InfoWindow>
