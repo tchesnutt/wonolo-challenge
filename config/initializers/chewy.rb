@@ -1,2 +1,2 @@
-Chewy.settings = {host: 'localhost:9250'}
+Chewy.settings = {host: 'localhost:9200'}
 Chewy.logger = Logger.new(STDOUT)

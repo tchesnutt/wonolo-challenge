@@ -7,7 +7,8 @@ class App extends React.Component {
     this.state = {
       address: "",
       city: "",
-      zip: ""
+      zip: "",
+      dist: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,8 +40,12 @@ class App extends React.Component {
             Zip:
             <input type="text" data-field="zip" value={this.state.zip} onChange={this.handleChange} />
           </label>
+          <label>
+            Distance(mi):
+            <input type="text" data-field="dist" value={this.state.dist} onChange={this.handleChange} />
+          </label>
           <input type="submit" value="Submit" />
-      </form>
+        </form>
       </div>
     );
   }

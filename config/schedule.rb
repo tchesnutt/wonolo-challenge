@@ -19,5 +19,7 @@
 
 every 1.day, :at => '12:00am' do
   rake db:drop
+  rake db:setup
   rake "import:jobs['posted']"
+  rake "chewy:reset"
 end
