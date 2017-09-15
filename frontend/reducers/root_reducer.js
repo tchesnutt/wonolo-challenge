@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import JobsReducer from './jobs_reducer';
 
 const RootReducer = combineReducers({
-  jobs: JobsReducer
+  search_result: JobsReducer
 });
 
 export default RootReducer;
