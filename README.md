@@ -1,13 +1,12 @@
-# README
+# Wonolyagot
 
 ## The Idea
   When I was checking out your platform, I didn't see any way to find out what work was available in my area without having to sign up and go through orientation.
 
   So, I thought it'd be cool to build a tool to remedy that.
 
-  ---
-
 ## Implementation
+### Backend
   I sought to accomplish this task with Rails and React. Firstly, because both make up a large part of the Wonolo stack and, second, because I used both in the past.
 
   The idea is to, at the 12am each day:
@@ -35,7 +34,7 @@
     end
   ```
 
-  Another key part of the this process is figuring out the coordinates of a User from either their address and/or city. To do this I used the gem `geocoder`. When deploying, I encountered the following: `"Google API error: over query limit."` To circumvent, I googled the error, and came across a quick solution. Caching searches with Redis. I used the heroku addon and amended my `geocoder.rb` file with:
+  Another key part of the this process is figuring out the coordinates of a User from either their address and/or city. To do this I used the gem `geocoder`. When deploying, I encountered the following: `"Google API error: over query limit."` To circumvent, I googled the error, and came across a quick solution. Caching searches with Redis. I used the heroku addon `Redis To Go` and amended my `geocoder.rb` file with:
 
   ```ruby
     Geocoder.configure(
@@ -50,4 +49,4 @@
     )
   ```
 
-  
+### Frontend

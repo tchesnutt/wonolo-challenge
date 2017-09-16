@@ -3,7 +3,7 @@ task :update_jobs => :environment do
   puts "Configuring New DB"
   Rake::Task["db:migrate"].invoke
   puts "Updating Jobs..."
-  Rake::Task["import:jobs['posted']"].invoke
+  Rake::Task["import:jobs"].invoke('posted')
   puts "Performing Index..."
   Rake::Task["chewy:reset"].invoke
 end
