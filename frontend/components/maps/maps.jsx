@@ -19,6 +19,7 @@ class Maps extends React.Component {
 
     this.onMarkerClicked = this.onMarkerClicked.bind(this)
     this.displayBadges = this.displayBadges.bind(this)
+    this.formatWage = this.formatWage.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,7 +69,8 @@ class Maps extends React.Component {
   }
 
   formatWage(wage,duration){
-
+    let money = (wage/(duration/60)).toFixed(2)
+    return money
   }
 
   render(){
@@ -94,7 +96,7 @@ class Maps extends React.Component {
           visible={this.state.showingInfoWindow}>
             <div className='job-info'>
               <h1>Wage: </h1>
-              <p>{this.state.selectedMarkerInfo.wage/(this.state.selectedMarkerInfo.duration/60)}/hr</p>
+              <p>${this.formatWage(this.state.selectedMarkerInfo.wage, this.state.selectedMarkerInfo.duration)}/hr</p>
               <h1>Catgory: </h1>
               <p>{this.state.selectedMarkerInfo.category}</p>
               <h1>Description:</h1>
