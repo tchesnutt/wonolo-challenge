@@ -8,7 +8,7 @@ class App extends React.Component {
       address: "",
       city: "San Francisco",
       zip: "",
-      dist: "",
+      dist: "100",
       error: ""
     }
     this.handleChange = this.handleChange.bind(this);

@@ -84,7 +84,7 @@ class Maps extends React.Component {
             name={j.id}
             onClick={this.onMarkerClicked}
             position={{lat: j.latitude, lng: j.longitude}}
-            icon={{ url: './assets/wonolo-marker.png',
+            icon={{ url: 'https://res.cloudinary.com/dxtvmwxxb/image/upload/v1505678573/wonolo-marker_zqeg7u.png',
                     anchor: new google.maps.Point(16,16),
                     scaledSize: new google.maps.Size(50,50)}}
                     />
