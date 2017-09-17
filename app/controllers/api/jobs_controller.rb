@@ -15,7 +15,7 @@ class Api::JobsController < ApplicationController
         end
       end
     end
-
+    puts "Serving #{@jobs.length} jobs"
     render 'api/jobs/index'
   end
 

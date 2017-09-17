@@ -67,6 +67,10 @@ class Maps extends React.Component {
     }
   }
 
+  formatWage(wage,duration){
+
+  }
+
   render(){
     return(
       <Map
@@ -79,7 +83,11 @@ class Maps extends React.Component {
             key={j.id}
             name={j.id}
             onClick={this.onMarkerClicked}
-            position={{lat: j.latitude, lng: j.longitude}}/>
+            position={{lat: j.latitude, lng: j.longitude}}
+            icon={{ url: './assets/wonolo-marker.png',
+                    anchor: new google.maps.Point(16,16),
+                    scaledSize: new google.maps.Size(50,50)}}
+                    />
         ))}
         <InfoWindow
           marker={this.state.activeMarker}
