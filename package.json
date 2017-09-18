@@ -33,7 +33,8 @@
   },
   "scripts": {
     "test": "jest",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
