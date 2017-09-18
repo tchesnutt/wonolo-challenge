@@ -76,6 +76,7 @@
     end
   ```
 
+
 ### Frontend
   Composed of react and redux. A simple form is used to collect the parameters a user want's to search with. An important note of `geocoder` is that that users do not need to input an exact address. Due to that, the only validations on the form are whether distance exists and that it can be converted to a valid integer.
 
@@ -96,14 +97,8 @@
   I used `google-maps-react` to implement a map to display job postings. In clicking on a pin, the index of that job pin is used to select the correct job object from the array or jobs. That job's information is then served to the `InfoWindow` which then appears above the pin.
 
 ### Thoughts And Concerns Moving Forward
-  1) Styling is an issue. Could use a css library like Bulma to clean it up. Could be cool to recolor the markers yellow and have the Wonolo logo on them.
+  1) Always more room for styling. Could use a css library like Bulma to clean it up.
 
-  2) Something is going on with searching over long areas. Example:
+  2) Currently, I'm importing every job from the api call into my db. This includes duplicates of same job as some clients need several people. In the context of the aim of this project, that information is redundant. A better way would be to take the coordinate check, which is currently in the `JobsController`, and perform it when importing the jobs.
 
-  Searching City='San Francisco' Distance='1000' => One job in South San Francisco
-
-  Searching City='San Diego' Distance='1000' => One job in Los Angeles
-
-  The distance between these two cities is far less than 1000mi. So, that's weird.
-
-  3) More Tests. I one wrote tests for one reducer.
+  2) More Tests.

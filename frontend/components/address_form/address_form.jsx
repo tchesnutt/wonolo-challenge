@@ -64,7 +64,7 @@ class App extends React.Component {
           </label>
           <h4>{this.state.error}</h4>
           <div className='form-row-submit'>
-            <input type="submit" value="Submit" />
+            <button className='address-submit' type="submit">Submit</button>
           </div>
         </form>
       </div>
