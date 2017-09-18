@@ -41,7 +41,7 @@ class App extends React.Component {
           >
           <div className='modal-content'>
             <h1> Welcome To Wonolyagot!</h1>
-            <p>So you've heard good things about Wonolo. You've done some reasearch and you're interested.
+            <p>So you've heard good things about Wonolo. You've done some research and you're interested.
               <br/>
               You ask yourself, "What do they got for me?".
               <br/>

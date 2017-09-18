@@ -10,6 +10,7 @@
     "google-maps-react": "^1.1.0",
     "jest": "^21.1.0",
     "lodash": "^4.17.4",
+    "nock": "^9.0.14",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-modal": "^2.3.2",

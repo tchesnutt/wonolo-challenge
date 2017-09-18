@@ -97,8 +97,8 @@
   I used `google-maps-react` to implement a map to display job postings. In clicking on a pin, the index of that job pin is used to select the correct job object from the array or jobs. That job's information is then served to the `InfoWindow` which then appears above the pin.
 
 ### Thoughts And Concerns Moving Forward
-  1) Always more room for styling. Could use a css library like Bulma to clean it up.
+  1) Always more room for styling.
 
-  2) Currently, I'm importing every job from the api call into my db. This includes duplicates of same job as some clients need several people. In the context of the aim of this project, that information is redundant. A better way would be to take the coordinate check, which is currently in the `JobsController`, and perform it when importing the jobs.
+  2) Currently, I'm importing every job from the api calls into my db. This includes duplicates of same job as some clients need several people. In the context of the aim of this project, that information is redundant. A better way would be to take the coordinate check, which is currently in the `JobsController`, and perform it when importing the jobs.
 
   2) More Tests.
