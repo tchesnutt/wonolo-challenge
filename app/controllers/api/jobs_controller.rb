@@ -28,7 +28,7 @@ class Api::JobsController < ApplicationController
   end
 
   def search_by_location
-    jobs = JobsIndex.filter { match_all }.limit(1000)
+    jobs = JobsIndex.filter { match_all }.limit(10000)
     near_jobs = jobs.filter(geo_distance: {
       distance: "#{params[:dist]}",
       location: { lat: @location['lat'], lon: @location['lng']}
