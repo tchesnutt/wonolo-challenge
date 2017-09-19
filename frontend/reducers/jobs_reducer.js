@@ -5,7 +5,7 @@ const JobsReducer = ( state = {}, action ) => {
   Object.freeze( state );
   switch ( action.type ) {
   case RECEIVE_JOBS:
-    return merge({}, state, action.jobs)
+    return merge({}, action.jobs)
   default:
     return state;
   }
